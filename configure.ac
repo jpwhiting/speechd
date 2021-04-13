@@ -296,11 +296,13 @@ AC_ARG_WITH([pico],
 	[],
 	[with_pico=check])
 AS_IF([test $with_pico != "no"],
-	[AC_CHECK_LIB([ttspico], [pico_initialize],
+	[PKG_CHECK_MODULES([PICO], [ttspico1],
 		[with_pico=yes],
 		[AS_IF([test $with_pico = "yes"],
 			[AC_MSG_FAILURE([SVOX pico is not available])])])])
 AM_CONDITIONAL([pico_support], [test $with_pico = "yes"])
+AC_SUBST([PICO_CFLAGS])
+AC_SUBST([PICO_LIBS])
 AS_IF([test $with_pico = "yes"], [output_modules="${output_modules} pico"])
 
 # check for Voxygen Baratinoo support

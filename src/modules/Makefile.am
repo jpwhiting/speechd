@@ -166,8 +166,10 @@ if pico_support
 modulebin_PROGRAMS += sd_pico
 sd_pico_SOURCES = pico.c $(common_SOURCES)
 sd_pico_LDADD = $(top_builddir)/src/common/libcommon.la \
+	$(PICO_LIBS) \
 	-lttspico \
 	$(common_LDADD)
+sd_pico_CFLAGS = $(PICO_CFLAGS)
 endif
 
 if baratinoo_support
