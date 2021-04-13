@@ -151,8 +151,9 @@ endif
 if pico_support
 modulebin_PROGRAMS += sd_pico
 sd_pico_SOURCES = pico.c $(audio_SOURCES) $(common_SOURCES)
+sd_pico_CFLAGS = $(PICO_CFLAGS)
 sd_pico_LDADD = $(top_builddir)/src/common/libcommon.la \
-	$(audio_dlopen_modules) -lttspico \
+	$(audio_dlopen_modules) $(PICO_LIBS) \
 	$(common_LDADD)
 endif
 
