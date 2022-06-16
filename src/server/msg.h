@@ -156,5 +156,8 @@
 #define EVENT_PAUSED					EVENT_PAUSED_C" PAUSED" NEWLINE
 #define EVENT_RESUMED_C					"705"
 #define EVENT_RESUMED					EVENT_RESUMED_C" RESUMED" NEWLINE
+#define EVENT_AUDIO_INT                 706
+#define EVENT_AUDIO_C                   "706"
+#define EVENT_AUDIO                     EVENT_AUDIO_C" AUDIO" NEWLINE
 
 #endif /* MSG_H */
